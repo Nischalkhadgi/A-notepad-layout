@@ -50,8 +50,20 @@ designButton = Button(toolbar, text="Design", command = doNothing)
 designButton.pack(side=LEFT, padx=2, pady=2)
 toolbar.pack(side=TOP, fill=X)
 
+#text
+S = Scrollbar(root)
+T = Text(root, height=10, width=45)
+S.pack(side=RIGHT, fill=Y)
+T.pack(side=LEFT, fill=Y)
+S.config(command=T.yview)
+T.config(yscrollcommand=S.set)
+quote="This is a demo of Notepad++ and as well as \n of terminal. Here you can just see the text \n and some button which have sub button. Which is working but not giving \n the exact output."
+T.insert(END, quote)
+
 #status bar
 
-Status = Label(root, text="Pending...", bd=1, relief=SUNKEN, anchor=W)
-Status.pack(side=BOTTOM, fill=X)
+#Status = Label(root, text="Pending...", bd=1, relief=SUNKEN, anchor=W)
+#Status.pack(side=BOTTOM, fill=X)
+
 root.mainloop()
+
